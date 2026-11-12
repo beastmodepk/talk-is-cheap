@@ -32,9 +32,9 @@ button,select,input{font:inherit;min-height:44px}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
 .wrap{max-width:1060px;margin:0 auto;padding:0 16px 48px}
 
-/* Fake banner */
-.fake-banner{background:#111;color:#ffd84d;text-align:center;font-weight:800;letter-spacing:.14em;font-size:12px;padding:10px 12px;text-transform:uppercase}
-.fake-banner span{color:#fff;font-weight:600;letter-spacing:.02em;text-transform:none}
+/* Status banner */
+.status-banner{background:#101613;color:#c8d2cb;text-align:center;font-weight:700;font-size:13px;padding:10px 12px}
+.status-banner b{color:#4ade80;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
 
 /* Header */
 header{padding:28px 0 18px}
@@ -44,16 +44,12 @@ h1{font-size:clamp(34px,6vw,52px);line-height:1.02;margin:0;font-weight:800;lett
 .stat-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--ink)}
 .chip b{font-family:"IBM Plex Mono",monospace}
-.chip .sample{color:var(--muted);font-weight:600}
 
 /* Filters */
 .filters{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin:6px 0 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:end}
 .fgroup{display:flex;flex-direction:column;gap:6px}
 .fgroup label{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.seg{display:flex;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px}
-.seg button{border:0;background:transparent;color:var(--muted);font-weight:800;font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer;min-height:40px}
-.seg button.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-select,input[type=search]{background:var(--surface2);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 12px;font-weight:600}
+input[type=search]{background:var(--surface2);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 12px;font-weight:600}
 .fgrow{flex:1 1 200px}
 .fgrow input{width:100%}
 
@@ -64,14 +60,6 @@ select,input[type=search]{background:var(--surface2);border:1px solid var(--line
 .tab .count{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--surface2);border-radius:999px;padding:2px 8px}
 .tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .tab.active .count{background:rgba(128,128,128,.25);color:inherit}
-
-/* Titles strip */
-.titles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
-.title-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
-.title-card .t{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px}
-.title-card .w{font-weight:800;font-size:16px;margin-top:6px;word-break:break-word}
-.title-card .d{font-size:13px;color:var(--muted);margin-top:2px}
-.medal{width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px;background:#f5c542;color:#231a00;font-weight:800;flex:none}
 
 /* Rows */
 .board{display:flex;flex-direction:column;gap:8px}
@@ -84,29 +72,20 @@ select,input[type=search]{background:var(--surface2);border:1px solid var(--line
 .row.open .detail{display:block}
 
 /* Creator grid */
-.c-grid{grid-template-columns:44px 1fr auto auto 28px}
+.c-grid{grid-template-columns:44px 1fr auto 28px}
 .rank{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:700;color:var(--muted);text-align:center}
-.rank.top{color:var(--accent)}
 .handle{font-weight:800;font-size:17px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .substats{font-size:13px;color:var(--muted);margin-top:3px;display:flex;flex-wrap:wrap;gap:4px 14px}
 .substats b{color:var(--ink);font-family:"IBM Plex Mono",monospace;font-weight:600}
 .score-block{text-align:right}
-.score{font-family:"IBM Plex Mono",monospace;font-size:30px;font-weight:700;line-height:1}
+.score{font-family:"IBM Plex Mono",monospace;font-size:30px;font-weight:700;line-height:1;color:var(--muted)}
 .score-label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.trend{font-size:15px;font-weight:800}
-.trend.up{color:var(--green)} .trend.down{color:var(--red)} .trend.flat{color:var(--muted)}
 
 /* Badges */
 .badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.04em;padding:4px 9px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
-.b-follow{background:var(--green-bg);color:var(--green);border:1px solid var(--green)}
-.b-watch{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber)}
-.b-ignore{background:var(--grey-bg);color:var(--grey);border:1px solid var(--line)}
 .b-unrated{background:transparent;color:var(--muted);border:1px dashed var(--muted)}
-.b-true{background:var(--green-bg);color:var(--green)}
-.b-mostly{background:var(--green-bg);color:var(--green)}
-.b-mixed{background:var(--amber-bg);color:var(--amber)}
-.b-inflated{background:var(--red-bg);color:var(--red)}
-.b-unverified{background:var(--grey-bg);color:var(--grey)}
+.b-false{background:var(--red-bg);color:var(--red)}
+.b-checked{background:var(--grey-bg);color:var(--grey)}
 .pos{color:var(--green);font-weight:700}.neg{color:var(--red);font-weight:700}
 
 /* Detail internals */
@@ -122,7 +101,8 @@ select,input[type=search]{background:var(--surface2);border:1px solid var(--line
 .rank-card::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(74,222,128,.18)}
 .rank-card .rc-top{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9aa8a1;font-weight:800}
 .rank-card .rc-handle{font-size:20px;font-weight:800;margin-top:6px}
-.rank-card .rc-score{font-family:"IBM Plex Mono",monospace;font-size:44px;font-weight:700;color:#4ade80;line-height:1.1}
+.rank-card .rc-score{font-family:"IBM Plex Mono",monospace;font-size:44px;font-weight:700;color:#9aa8a1;line-height:1.1}
+.rank-card .rc-tier{font-size:15px;font-weight:800;color:#eef2ef}
 .rank-card .rc-row{display:flex;gap:16px;font-size:13px;color:#c8d2cb;margin-top:8px;flex-wrap:wrap}
 .rank-card .rc-row b{color:#fff;font-family:"IBM Plex Mono",monospace}
 .rank-card .rc-foot{margin-top:14px;font-size:11px;color:#7d8a81;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
@@ -136,7 +116,7 @@ select,input[type=search]{background:var(--surface2);border:1px solid var(--line
 .weight{font-size:13px;color:var(--muted);margin-top:3px}
 .weight b{color:var(--ink)}
 .scores-pair{display:flex;gap:16px;text-align:right}
-.mini-score .n{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:700}
+.mini-score .n{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:700;color:var(--muted)}
 .mini-score .l{font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .sugg{display:flex;flex-direction:column;gap:6px}
 .sugg-row{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;padding:9px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px}
@@ -146,7 +126,7 @@ select,input[type=search]{background:var(--surface2);border:1px solid var(--line
 /* Today feed */
 .feed{display:flex;flex-direction:column;gap:8px}
 .feed-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;display:flex;gap:14px;align-items:flex-start}
-.feed-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:19px;flex:none;background:var(--surface2)}
+.feed-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:15px;font-weight:800;font-family:"IBM Plex Mono",monospace;flex:none;background:var(--surface2);color:var(--accent)}
 .feed-item .ft{font-weight:800;font-size:15px}
 .feed-item .fd{color:var(--muted);font-size:14px;margin-top:2px}
 .feed-item .ftime{margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap;padding-top:3px}
@@ -171,22 +151,19 @@ footer strong{color:var(--ink)}
 @media (max-width:760px){
   .tabs{display:grid;grid-template-columns:1fr 1fr;overflow-x:visible}
   .tab{flex:none;width:100%}
-  .titles{grid-template-columns:1fr 1fr}
   .detail-cols{grid-template-columns:1fr}
   .c-grid{grid-template-columns:34px 1fr auto 22px}
-  .trend-cell{display:none}
   .score{font-size:24px}
   .s-grid{grid-template-columns:34px 1fr 22px}
   .scores-pair{grid-column:2;margin-top:2px;text-align:left}
   .scores-pair .mini-score{text-align:left}
   .filters{flex-direction:column;align-items:stretch}
-  .seg{width:100%} .seg button{flex:1}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="fake-banner">⚠ Fake data — design mock &nbsp;<span>· All scores, rates and rankings below are sample numbers for layout approval only</span></div>
+<div class="status-banner"><b>Pipeline run · Nov 12, 2026</b> &nbsp;·&nbsp; Paper book has settled 0 trades — every creator is Unrated until trades settle</div>
 
 <div class="wrap">
 <header>
@@ -194,221 +171,202 @@ footer strong{color:var(--ink)}
   <h1>Talk Is Cheap</h1>
   <p class="subtitle">Stock tips are free. Track records aren’t.</p>
   <div class="stat-chips">
-    <span class="chip"><b>975</b> stories tracked <span class="sample">· sample</span></span>
-    <span class="chip"><b>41</b> creators <span class="sample">· sample</span></span>
-    <span class="chip"><b>128</b> stocks suggested <span class="sample">· sample</span></span>
-    <span class="chip">Updated daily <span class="sample">· sample</span></span>
+    <span class="chip"><b>1,621</b> reels collected</span>
+    <span class="chip"><b>621</b> new today</span>
+    <span class="chip"><b>24</b> posts scraped &amp; fact-checked</span>
+    <span class="chip"><b>1,597</b> still queued</span>
+    <span class="chip"><b>29</b> picks extracted</span>
+    <span class="chip"><b>22</b> creators tracked</span>
+    <span class="chip"><b>22</b> stocks tracked</span>
   </div>
 </header>
 
 <div class="filters" role="search">
-  <div class="fgroup">
-    <label for="segLabel">Time window</label>
-    <div class="seg" id="windowSeg" role="group" aria-label="Time window">
-      <button data-window="7">7d</button>
-      <button data-window="30">30d</button>
-      <button data-window="90">90d</button>
-      <button data-window="all" class="active">All</button>
-    </div>
-  </div>
-  <div class="fgroup">
-    <label for="themeSel">Theme</label>
-    <select id="themeSel">
-      <option value="all">All themes</option>
-      <option value="ai">AI &amp; Memory</option>
-      <option value="space">Space</option>
-      <option value="earnings">Earnings</option>
-      <option value="gold">Gold</option>
-    </select>
-  </div>
   <div class="fgroup fgrow">
     <label for="searchBox">Search</label>
-    <input type="search" id="searchBox" placeholder="Search a creator, ticker or claim…" autocomplete="off">
+    <input type="search" id="searchBox" placeholder="Search a creator, ticker or post…" autocomplete="off">
   </div>
 </div>
 
 <nav class="tabs" aria-label="Boards">
-  <button class="tab active" data-board="creators">Creators <span class="count">10</span></button>
-  <button class="tab" data-board="stocks">Stocks <span class="count">10</span></button>
-  <button class="tab" data-board="today">Today <span class="count" id="todayCount">6</span></button>
-  <button class="tab" data-board="posts">Posts <span class="count">8</span></button>
+  <button class="tab active" data-board="creators">Creators <span class="count">22</span></button>
+  <button class="tab" data-board="stocks">Stocks <span class="count">1</span></button>
+  <button class="tab" data-board="today">Today <span class="count" id="todayCount">5</span></button>
+  <button class="tab" data-board="posts">Posts <span class="count">7</span></button>
 </nav>
 
 <!-- CREATORS -->
 <section id="board-creators">
-  <div class="titles" id="titlesStrip"></div>
-  <p class="board-note">Ranked by creator score — hit rate, average beat vs VOO, honesty and specificity, recency-weighted. Unrated creators (under 5 tracked picks) sit below all scored creators. Tap a row for the receipts.</p>
+  <p class="board-note">Ordered by picks extracted. Creator scores and tiers come only from settled Talk Is Cheap paper-book trades — the book has settled 0 trades so far, so every creator is Unrated with no score and no settled record yet. No promotions or demotions today: nobody has 3 settled trades. Tap a row for details.</p>
   <div class="board" id="creatorBoard"></div>
-  <div class="empty" id="creatorEmpty">No creators match those filters.</div>
+  <div class="empty" id="creatorEmpty">No creators match that search.</div>
 </section>
 
 <!-- STOCKS -->
 <section id="board-stocks" class="hidden-board">
-  <p class="board-note">Ranked by combined strength: story weight from creators, checked by the Catalyst score (/30) and Street conviction (/10). Tap a row to see every suggester.</p>
+  <p class="board-note">22 stocks are tracked, but only one suggested stock is still unexpired — everything else has aged out of its freshness window. Catalyst score (/30) and Street conviction (/10) are left blank for the desk scorers. Tap the row for the full record.</p>
   <div class="board" id="stockBoard"></div>
-  <div class="empty" id="stockEmpty">No stocks match those filters.</div>
+  <div class="empty" id="stockEmpty">No stocks match that search.</div>
 </section>
 
 <!-- TODAY -->
 <section id="board-today" class="hidden-board">
-  <p class="board-note">What changed since yesterday — new picks logged, checkpoints landing, tiers moving, stories expiring.</p>
+  <p class="board-note">What the Nov 12, 2026 pipeline run did — collection, extraction, scoring and checkpoints.</p>
   <div class="feed" id="todayFeed"></div>
-  <div class="empty" id="todayEmpty">Nothing in this window matches those filters.</div>
+  <div class="empty" id="todayEmpty">Nothing matches that search.</div>
 </section>
 
 <!-- POSTS -->
 <section id="board-posts" class="hidden-board">
-  <p class="board-note">Every post scored on fact-check, honesty and how specific the call was. Hype sinks, receipts float.</p>
+  <p class="board-note">Fact-check scores (out of 100) assigned at ingest for the posts scraped so far — 7 of the 24 scraped posts carry a score in this run. Tap a row for the note.</p>
   <div class="board" id="postBoard"></div>
-  <div class="empty" id="postEmpty">No posts match those filters.</div>
+  <div class="empty" id="postEmpty">No posts match that search.</div>
 </section>
 
 <footer>
-  <p><strong>Sample data only.</strong> Every score, hit rate, ranking and checkpoint result on this page is a fake number placed for layout approval — it is not a real rating of any creator, post or stock.</p>
-  <p><strong>Not financial advice.</strong> A leaderboard of public stock calls is information, not a recommendation to buy or sell anything. Ranks are earned from tracked picks only — never bought, never editable after the fact. Creators can dispute a record or opt out via the published route (details in the full design).</p>
+  <p><strong>How scoring works.</strong> Creator scores and tiers come only from settled Talk Is Cheap paper-book trades — never from post popularity or checkpoint moves. The book has settled 0 trades, so no creator has a score yet. Post scores are ingest fact-check scores out of 100. The 1d / 5d / 20d beat-vs-VOO checkpoints are a secondary in-flight indicator only and never set tiers; today’s checkpoint run filled 0 because the Stooq price source was unavailable, so no checkpoint figures are shown.</p>
+  <p><strong>Not financial advice.</strong> A leaderboard of public stock calls is information, not a recommendation to buy or sell anything. Records are earned from tracked picks only — never bought, never editable after the fact.</p>
 </footer>
 </div>
 
 <script>
 var CREATORS = [
- {rank:1,handle:"@nicholascrown",tier:"follow",score:87,picks:34,hit:68,vs:"+2.4",trend:"up",themes:["ai","earnings"],active:2,
-  note:"Frameworks strong, return claims weak — best layer-rotation thinking in the sample set.",
-  picksList:[{tk:"MU",meta:"Memory layer call · 20d checkpoint",res:"+6.1 vs VOO",cls:"pos"},{tk:"RKLB",meta:"Iridium deal post · 5d checkpoint",res:"+3.2 vs VOO",cls:"pos"},{tk:"TSM",meta:"Foundry layer pick · 20d checkpoint",res:"−1.4 vs VOO",cls:"neg"}]},
- {rank:2,handle:"@joe.investss",tier:"follow",score:84,picks:27,hit:66,vs:"+2.1",trend:"up",themes:["space","ai"],active:4,
-  note:"Best-verified poster in the sweep — every figure in his “down ~50%” post checked out.",
-  picksList:[{tk:"RKLB",meta:"Beaten-down leader · 20d checkpoint",res:"+4.8 vs VOO",cls:"pos"},{tk:"AAOI",meta:"Beaten-down leader · 5d checkpoint",res:"+1.9 vs VOO",cls:"pos"},{tk:"ASTS",meta:"Beaten-down leader · 20d checkpoint",res:"−0.7 vs VOO",cls:"neg"}]},
- {rank:3,handle:"@mikes.ai",tier:"watch",score:76,picks:41,hit:59,vs:"+1.2",trend:"flat",themes:["ai"],active:6,
-  note:"Facts solid, headlines hype — picks verify well, the “millionaires” framing does not.",
-  picksList:[{tk:"MU",meta:"AI infrastructure pick · 20d checkpoint",res:"+5.4 vs VOO",cls:"pos"},{tk:"ASML",meta:"Sole EUV maker thesis · 20d checkpoint",res:"+0.8 vs VOO",cls:"pos"},{tk:"AAOI",meta:"Optics pick · 5d checkpoint",res:"−2.3 vs VOO",cls:"neg"}]},
- {rank:4,handle:"@thestreet",tier:"watch",score:73,picks:19,hit:58,vs:"+0.9",trend:"up",themes:["ai","earnings"],active:9,
-  note:"Rapid-fire format, clear single-name conviction — called Micron his one stock for 2027.",
-  picksList:[{tk:"MU",meta:"“One stock for 2027” · 20d checkpoint",res:"+5.9 vs VOO",cls:"pos"},{tk:"AVGO",meta:"Preferred over NVDA · 5d checkpoint",res:"+1.1 vs VOO",cls:"pos"},{tk:"TSM",meta:"Preferred over ASML · 20d checkpoint",res:"−0.5 vs VOO",cls:"neg"}]},
- {rank:5,handle:"@berttrading",tier:"watch",score:69,picks:15,hit:55,vs:"+0.4",trend:"down",themes:["ai"],active:15,
-  note:"Headline overstates his source — Huang recommended nothing; the MU + ASML overlap still counts.",
-  picksList:[{tk:"MU",meta:"#1 pick · 20d checkpoint",res:"+4.2 vs VOO",cls:"pos"},{tk:"ASML",meta:"Supply-chain pick · 5d checkpoint",res:"−1.8 vs VOO",cls:"neg"},{tk:"DRAM",meta:"Memory ETF pick · 20d checkpoint",res:"+2.6 vs VOO",cls:"pos"}]},
- {rank:6,handle:"@philjayngo",tier:"watch",score:66,picks:23,hit:52,vs:"+0.1",trend:"flat",themes:["ai","earnings"],active:21,
-  note:"Gives exact buy-under levels — highly specific, easy to score. Portfolio figure unverifiable.",
-  picksList:[{tk:"AVGO",meta:"Buy under $330 · level not yet hit",res:"Pending",cls:""},{tk:"MU",meta:"Buy under $850 · 5d checkpoint",res:"+0.6 vs VOO",cls:"pos"},{tk:"HOOD",meta:"Watching at $78 · level not yet hit",res:"Pending",cls:""}]},
- {rank:7,handle:"@aristotle_investments",tier:"unrated",score:null,picks:4,hit:null,vs:null,trend:"flat",themes:["gold","earnings"],active:12,
-  note:"Only 4 tracked picks — unrated until the sample is big enough to mean something.",
-  picksList:[{tk:"GLD",meta:"Gold allocation post · 5d checkpoint",res:"+1.3 vs VOO",cls:"pos"},{tk:"NVDA",meta:"Earnings preview · 1d checkpoint",res:"−0.4 vs VOO",cls:"neg"},{tk:"PLTR",meta:"Momentum post · 5d checkpoint",res:"+2.0 vs VOO",cls:"pos"}]},
- {rank:8,handle:"@wall_street_trapper",tier:"ignore",score:48,picks:31,hit:44,vs:"−0.8",trend:"down",themes:["ai","space"],active:28,
-  note:"Big verified fact (government quantum stakes) buried in loose framing and rounded numbers.",
-  picksList:[{tk:"RGTI",meta:"Government stake post · 20d checkpoint",res:"+3.7 vs VOO",cls:"pos"},{tk:"QBTS",meta:"Government stake post · 5d checkpoint",res:"−1.2 vs VOO",cls:"neg"},{tk:"IONQ",meta:"Quantum basket post · 20d checkpoint",res:"−3.1 vs VOO",cls:"neg"}]},
- {rank:9,handle:"@quantifiedstrategies",tier:"ignore",score:41,picks:52,hit:41,vs:"−1.3",trend:"down",themes:["earnings"],active:35,
-  note:"“56% annual returns” headline is marketing — its own equity curve implies roughly 10% CAGR.",
-  picksList:[{tk:"SPY",meta:"RSI system claim · 20d checkpoint",res:"−0.9 vs VOO",cls:"neg"},{tk:"QQQ",meta:"Mean-reversion post · 5d checkpoint",res:"+0.3 vs VOO",cls:"pos"},{tk:"SPY",meta:"Seasonality post · 20d checkpoint",res:"−2.2 vs VOO",cls:"neg"}]},
- {rank:10,handle:"@sarsland_",tier:"ignore",score:36,picks:18,hit:38,vs:"−1.9",trend:"down",themes:["space","gold"],active:44,
-  note:"High post volume, low specificity — rarely gives a level, a date or a checkable reason.",
-  picksList:[{tk:"RKLB",meta:"Space momentum post · 5d checkpoint",res:"−2.8 vs VOO",cls:"neg"},{tk:"GDX",meta:"Gold miners post · 20d checkpoint",res:"+0.5 vs VOO",cls:"pos"},{tk:"ASTS",meta:"Space post · 20d checkpoint",res:"−3.4 vs VOO",cls:"neg"}]}
-];
-
-var TITLES = [
- {t:"Leader of the Month",w:"@nicholascrown",d:"Score 87 · 68% hit rate"},
- {t:"Biggest Riser",w:"@joe.investss",d:"Up 6 places in 30 days"},
- {t:"Most Honest",w:"@joe.investss",d:"Best fact-check record"},
- {t:"Best Newcomer",w:"@aristotle_investments",d:"4 picks · promising start"}
+ {handle:"@betterwavefinance",picks:6,kind:"picks",
+  note:"6 picks extracted — the most of any creator in the current corpus. No settled paper-book trades yet, so no score or tier.",
+  knownPicks:[]},
+ {handle:"@wall_street_trapper",picks:5,kind:"picks",
+  note:"5 picks extracted. His government-stake post (RGTI / QBTS) fact-checked at 85/100 at ingest. No settled trades yet.",
+  knownPicks:[{tk:"RGTI",meta:"Government-stake post · Sep 8, 2026"},{tk:"QBTS",meta:"Government-stake post · Sep 8, 2026"}]},
+ {handle:"@bdinvestingg",picks:5,kind:"picks",
+  note:"5 picks extracted. No settled paper-book trades yet, so no score or tier.",
+  knownPicks:[]},
+ {handle:"@mikes.ai",picks:3,kind:"picks",
+  note:"3 picks extracted. His “millionaires” post fact-checked at 65/100 at ingest. No settled trades yet.",
+  knownPicks:[]},
+ {handle:"@berttrading",picks:3,kind:"picks",
+  note:"3 picks extracted. No settled paper-book trades yet, so no score or tier.",
+  knownPicks:[]},
+ {handle:"@joe.investss",picks:3,kind:"picks",
+  note:"3 picks extracted. His undervalued-stocks post fact-checked at 80/100 at ingest. No settled trades yet.",
+  knownPicks:[]},
+ {handle:"@thestreet",picks:1,kind:"picks",
+  note:"Suggested MU on Oct 19, 2026 — currently the only unexpired candidate on the Stocks board. Expires Nov 16, 2026.",
+  knownPicks:[{tk:"MU",meta:"Suggested Oct 19, 2026 · expires Nov 16, 2026"}]},
+ {handle:"@nicholascrown",picks:1,kind:"picks",
+  note:"1 pick extracted (RKLB). His RKLB / Iridium post fact-checked at 75/100 at ingest. No settled trades yet.",
+  knownPicks:[{tk:"RKLB",meta:"Iridium-deal post"}]},
+ {handle:"@bhargava.perumalla1",picks:1,kind:"picks",
+  note:"1 pick extracted. No settled paper-book trades yet, so no score or tier.",
+  knownPicks:[]},
+ {handle:"@tastyliveshow",picks:1,kind:"picks",
+  note:"1 bearish NVDA watch extracted — a watch, not a long pick. No settled trades yet.",
+  knownPicks:[{tk:"NVDA",meta:"Bearish watch — not a long pick"}]},
+ {handle:"@damons.journal",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@greenworkshops",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@ifrt_official",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@indrazith_shantharaj",picks:0,kind:"framework",
+  note:"Posts rule / framework content — no ticker picks extracted. His mechanical-system post fact-checked at 85/100 at ingest.",
+  knownPicks:[]},
+ {handle:"@koh_kim",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@luxalgo",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@quantifiedstrategies",picks:0,kind:"framework",
+  note:"Posts rule / framework content — no ticker picks extracted. His system post fact-checked at 55/100 at ingest.",
+  knownPicks:[]},
+ {handle:"@ragheehorner",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@sarsland_",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@swing_niveshak",picks:0,kind:"framework",
+  note:"Posts rule / framework content — no ticker picks extracted. His Kell-system post fact-checked at 40/100 — its 983% header claim was false; the real figure is 941.1%.",
+  knownPicks:[]},
+ {handle:"@trade.momentum",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]},
+ {handle:"@tradesbyanand",picks:0,kind:"framework",
+  note:"Tracked for rule / framework content — no ticker picks extracted yet.",
+  knownPicks:[]}
 ];
 
 var STOCKS = [
- {rank:1,tk:"MU",co:"Micron Technology",weight:"31 suggesters · 9 Follow-tier",cat:27,street:9,why:"Memory / HBM is the AI bottleneck — the most-mentioned name in the whole sweep.",fresh:"Nov 10",themes:["ai"],active:2,
-  sugg:[{who:"@nicholascrown",tier:"follow",why:"Memory is the biggest AI bottleneck for 2027"},{who:"@thestreet",tier:"watch",why:"His one stock for 2027, over Nvidia"},{who:"@mikes.ai",tier:"watch",why:"$250B US investment through 2035"},{who:"@berttrading",tier:"watch",why:"#1 supply-chain pick"}],track:"Earliest tracked pick (Oct 19): +5.9 pts vs VOO at 20-day checkpoint"},
- {rank:2,tk:"AMD",co:"Advanced Micro Devices",weight:"7 suggesters · 4 Follow-tier",cat:24,street:8,why:"AI data-centre demand — seven independent suggesters converging on the same why.",fresh:"Nov 9",themes:["ai"],active:3,
-  sugg:[{who:"@nicholascrown",tier:"follow",why:"Design layer — GPU share gains vs NVDA"},{who:"@joe.investss",tier:"follow",why:"Data-centre revenue inflecting"},{who:"@mikes.ai",tier:"watch",why:"Second-source GPU demand from hyperscalers"},{who:"@thestreet",tier:"watch",why:"Mentioned in AI infrastructure roundup"},{who:"@philjayngo",tier:"watch",why:"On watchlist, awaiting a dip level"},{who:"@berttrading",tier:"watch",why:"Supply-chain beneficiary"},{who:"@sarsland_",tier:"ignore",why:"Momentum mention, no level given"}],track:"Earliest tracked pick (Oct 28): +2.2 pts vs VOO at 5-day checkpoint"},
- {rank:3,tk:"NVDA",co:"NVIDIA",weight:"26 suggesters · 5 Follow-tier",cat:25,street:8,why:"The default AI name — heavily suggested, but several top creators prefer the suppliers around it.",fresh:"Nov 11",themes:["ai","earnings"],active:1,
-  sugg:[{who:"@nicholascrown",tier:"follow",why:"Design layer leader, but hyperscalers flat"},{who:"@philjayngo",tier:"watch",why:"Waiting on $205"},{who:"@thestreet",tier:"watch",why:"Passed over for MU and AVGO in rapid-fire"}],track:"Earliest tracked pick (Oct 22): +1.6 pts vs VOO at 20-day checkpoint"},
- {rank:4,tk:"ASML",co:"ASML Holding",weight:"14 suggesters · 4 Follow-tier",cat:23,street:7,why:"The only company that builds EUV machines — a monopoly position in the chip chain.",fresh:"Nov 8",themes:["ai"],active:5,
-  sugg:[{who:"@mikes.ai",tier:"watch",why:"Sole EUV maker, machines priced in the hundreds of millions"},{who:"@berttrading",tier:"watch",why:"Supply-chain pick #2"},{who:"@philjayngo",tier:"watch",why:"Waiting on $1,450"}],track:"Earliest tracked pick (Oct 25): +0.8 pts vs VOO at 20-day checkpoint"},
- {rank:5,tk:"RKLB",co:"Rocket Lab",weight:"18 suggesters · 3 Follow-tier",cat:21,street:7,why:"Space momentum plus a real ~$8B Iridium deal (enterprise value, not yet closed).",fresh:"Nov 10",themes:["space"],active:2,
-  sugg:[{who:"@nicholascrown",tier:"follow",why:"Iridium deal analysis"},{who:"@joe.investss",tier:"follow",why:"Down ~50% with backlog intact"},{who:"@sarsland_",tier:"ignore",why:"Momentum mention"}],track:"Earliest tracked pick (Oct 30): +4.8 pts vs VOO at 20-day checkpoint"},
- {rank:6,tk:"AAOI",co:"Applied Optoelectronics",weight:"9 suggesters · 2 Follow-tier",cat:20,street:6,why:"Data-centre optics growing fast (+86% revenue) — still loss-making, so the riskiest name here.",fresh:"Nov 7",themes:["ai"],active:7,
-  sugg:[{who:"@mikes.ai",tier:"watch",why:"Q2 revenue +86% year over year"},{who:"@joe.investss",tier:"follow",why:"Down ~50%, demand story intact"}],track:"Earliest tracked pick (Nov 1): +1.9 pts vs VOO at 5-day checkpoint"},
- {rank:7,tk:"RGTI",co:"Rigetti Computing",weight:"11 suggesters · 1 Follow-tier",cat:18,street:6,why:"US government took a real $100M CHIPS equity stake — a dated, checkable catalyst.",fresh:"Nov 6",themes:["ai"],active:8,
-  sugg:[{who:"@wall_street_trapper",tier:"ignore",why:"Government invested $200M across quantum names"},{who:"@aristotle_investments",tier:"unrated",why:"Policy catalyst watch"}],track:"Earliest tracked pick (Nov 2): +3.7 pts vs VOO at 20-day checkpoint"},
- {rank:8,tk:"AVGO",co:"Broadcom",weight:"12 suggesters · 3 Follow-tier",cat:22,street:7,why:"Custom AI chips for hyperscalers — preferred over NVDA by multiple creators on dips.",fresh:"Nov 9",themes:["ai","earnings"],active:3,
-  sugg:[{who:"@thestreet",tier:"watch",why:"Broadcom over Nvidia in rapid-fire"},{who:"@philjayngo",tier:"watch",why:"Buy under $330"}],track:"Earliest tracked pick (Oct 27): +1.1 pts vs VOO at 5-day checkpoint"},
- {rank:9,tk:"VRT",co:"Vertiv",weight:"8 suggesters · 2 Follow-tier",cat:19,street:6,why:"Data-centre power and cooling — the picks-and-shovels layer behind every new build.",fresh:"Nov 5",themes:["ai"],active:10,
-  sugg:[{who:"@philjayngo",tier:"watch",why:"Waiting on $190"},{who:"@nicholascrown",tier:"follow",why:"Power/cooling layer candidate"}],track:"Earliest tracked pick (Nov 3): checkpoint pending"},
- {rank:10,tk:"PLTR",co:"Palantir",weight:"15 suggesters · 1 Follow-tier",cat:16,street:5,why:"Huge mention volume, thin Follow-tier backing — popularity is not the same as a scored case.",fresh:"Nov 11",themes:["ai","earnings"],active:1,
-  sugg:[{who:"@aristotle_investments",tier:"unrated",why:"Momentum post"},{who:"@sarsland_",tier:"ignore",why:"Mentioned in AI roundup"}],track:"Earliest tracked pick (Nov 4): +2.0 pts vs VOO at 5-day checkpoint"}
+ {rank:1,tk:"MU",co:"Micron Technology",
+  why:"“Single stock for 2027; memory over GPUs, Micron over NVDA.”",
+  weight:"Most-picked stock overall · 5 picks across all scraped posts",
+  sugg:[{who:"@thestreet",tier:"Unrated",why:"Single stock for 2027; memory over GPUs, Micron over NVDA",date:"Oct 19, 2026"}],
+  expires:"Nov 16, 2026",
+  risk:"Memory cyclicality — and multiple creators cluster on the same HBM / memory thesis, so the signal is less independent than the pick count suggests.",
+  track:"No checkpoint figures: today’s 1d / 5d / 20d checkpoint run filled 0 (Stooq price source unavailable). Checkpoints are a secondary indicator only and never set tiers."}
 ];
 
 var TODAY = [
- {icon:"🆕",cls:"",title:"14 new posts ingested",desc:"3 new picks logged: MU, RKLB, GLD — each timestamped with the price at post time.",time:"Today",days:0,themes:["ai","space","gold"]},
- {icon:"✓",cls:"",title:"Pick hit its 20-day checkpoint",desc:"@joe.investss on RKLB closed +4.8 pts vs VOO. Logged permanently — it counts toward his score either way.",time:"Today",days:0,themes:["space"]},
- {icon:"⬆",cls:"",title:"Tier promotion: @thestreet → Watch",desc:"Hit rate crossed 55% over 19 tracked picks with a clean fact-check record.",time:"Today",days:0,themes:["ai"]},
- {icon:"⬇",cls:"",title:"Tier demotion: @sarsland_ → Ignore",desc:"Hit rate fell to 38% and the last 6 posts gave no level, date or checkable reason.",time:"Today",days:0,themes:["space"]},
- {icon:"⌛",cls:"",title:"Story expired: October dip levels",desc:"@philjayngo's October buy-under levels aged past the 30-day freshness window and no longer feed stock weight.",time:"Yesterday",days:1,themes:["ai","earnings"]},
- {icon:"🏅",cls:"",title:"Copy-cluster flagged",desc:"7 accounts posted near-identical Trump-portfolio percentages within 48 hours — counted as one source, not seven.",time:"Yesterday",days:1,themes:["earnings"]}
+ {icon:"+621",title:"621 new reels collected",desc:"Corpus is now 1,621 reels in total. 24 posts have been scraped and fact-checked so far; 1,597 are still queued.",time:"Today"},
+ {icon:"29",title:"29 picks extracted",desc:"Across 22 tracked creators and 22 tracked stocks. Ten creators have at least one extracted pick; the other twelve posted rule / framework content with no ticker picks.",time:"Today"},
+ {icon:"MU",title:"One active candidate: MU (Micron)",desc:"Suggested by @thestreet on Oct 19, 2026 — the only unexpired suggested stock. Expires Nov 16, 2026. MU is also the most-picked stock overall, with 5 picks across all scraped posts.",time:"Today"},
+ {icon:"0",title:"0 settled paper-book trades",desc:"Creator scores and tiers come only from settled trades, so every creator remains Unrated. No promotions or demotions today — nobody has 3 settled trades yet.",time:"Today"},
+ {icon:"—",title:"Checkpoints filled: 0",desc:"The 1d / 5d / 20d beat-vs-VOO checkpoint run filled nothing — the Stooq price source was unavailable (bot-gated). No checkpoint figures are shown rather than invented.",time:"Today"}
 ];
 
 var POSTS = [
- {who:"@wall_street_trapper",claim:"“The government invested $200M in Rigetti & D-Wave”",verdict:"true",vlabel:"True",score:88,spec:"High",clarity:"Medium",days:5,themes:["ai"],note:"Commerce finalised $100M CHIPS awards each to RGTI and QBTS on Sep 8, 2026, with minority US equity stakes. YTD figures matched reporting."},
- {who:"@mikes.ai",claim:"“Micron is investing $250B in the US through 2035”",verdict:"true",vlabel:"True",score:85,spec:"High",clarity:"High",days:12,themes:["ai"],note:"Matches Micron's own announcement. The “millionaires in 5 years” headline around it is unprovable marketing."},
- {who:"@joe.investss",claim:"“RKLB, AAOI and ASTS are all down ~50% — here are the numbers”",verdict:"mostly",vlabel:"Mostly true",score:82,spec:"High",clarity:"High",days:9,themes:["space","ai"],note:"Every figure checked out against company releases. Caveat he underplays: RKLB's Neutron slipped to 2027."},
- {who:"@nicholascrown",claim:"“Rocket Lab's Iridium deal is worth ~$8B”",verdict:"mostly",vlabel:"Mostly true",score:78,spec:"Medium",clarity:"High",days:16,themes:["space"],note:"Deal is real (announced Jun 29, 2026) but not closed — expected mid-2027 — and $8B is enterprise value including debt, which the post omits."},
- {who:"@bean_research",claim:"“Trump's portfolio: TMTG 38.00%, NVDA & AAPL 8% each”",verdict:"mixed",vlabel:"Mixed",score:44,spec:"High*",clarity:"Low",days:24,themes:["earnings"],note:"*Specific but falsely precise. Disclosures are given in ranges, so 38.00% cannot be derived — and other copies of the same graphic say 24%. Direction right, decimals invented."},
- {who:"Oliver Kell (via repost)",claim:"“983% US Investing Championship winner — follow the system”",verdict:"inflated",vlabel:"Inflated",score:38,spec:"Medium",clarity:"High",days:31,themes:["earnings"],note:"The real figure was +941.1% (2020), achieved with concentrated momentum on margin. The method is clear; the headline number is wrong."},
- {who:"@quantifiedstrategies",claim:"“This RSI system returns 56% a year”",verdict:"inflated",vlabel:"Inflated",score:33,spec:"Medium",clarity:"High",days:40,themes:["earnings"],note:"Its own published equity curve implies roughly 10% CAGR. Rule is stated clearly — the return claim is marketing."},
- {who:"@luxalgo",claim:"“VWAP + EMA system — high win-rate entries”",verdict:"unverified",vlabel:"Unverified",score:29,spec:"Low",clarity:"Medium",days:48,themes:["ai"],note:"No checkable track record attached; its own disclosed backtest win rate is around 29%."}
+ {who:"@wall_street_trapper",subject:"Government-stake post — RGTI & QBTS",score:85,badge:null,
+  note:"Fact-check score assigned at ingest. The post covers the US government stakes in Rigetti (RGTI) and D-Wave (QBTS), dated Sep 8, 2026."},
+ {who:"@indrazith_shantharaj",subject:"Mechanical system post",score:85,badge:null,
+  note:"Fact-check score assigned at ingest for this mechanical trading-system post."},
+ {who:"@joe.investss",subject:"Undervalued stocks post",score:80,badge:null,
+  note:"Fact-check score assigned at ingest for this undervalued-stocks post."},
+ {who:"@nicholascrown",subject:"RKLB / Iridium post",score:75,badge:null,
+  note:"Fact-check score assigned at ingest for this Rocket Lab / Iridium-deal post."},
+ {who:"@mikes.ai",subject:"“Millionaires” post",score:65,badge:null,
+  note:"Fact-check score assigned at ingest for this post."},
+ {who:"@quantifiedstrategies",subject:"System post",score:55,badge:null,
+  note:"Fact-check score assigned at ingest for this trading-system post."},
+ {who:"@swing_niveshak",subject:"Kell-system post",score:40,badge:"Header claim false",
+  note:"The post’s 983% header claim was false — the real figure is 941.1%. Fact-check score assigned at ingest."}
 ];
 
-var state = {window:"all", theme:"all", query:""};
+var state = {query:""};
 
-function tierBadge(t){
-  if(t==="follow") return '<span class="badge b-follow">● Follow closely</span>';
-  if(t==="watch") return '<span class="badge b-watch">● Watch</span>';
-  if(t==="ignore") return '<span class="badge b-ignore">● Ignore</span>';
-  return '<span class="badge b-unrated">○ Unrated</span>';
-}
-function trendHtml(t, show){
-  if(t==="up") return '<span class="trend up">▲</span>';
-  if(t==="down") return '<span class="trend down">▼</span>';
-  return '<span class="trend flat">—</span>';
-}
-function inWindow(days){
-  if(state.window==="all") return true;
-  return days <= parseInt(state.window,10);
-}
-function themeOk(themes){ return state.theme==="all" || themes.indexOf(state.theme)>-1; }
 function queryOk(text){ return !state.query || text.toLowerCase().indexOf(state.query)>-1; }
-
-function renderTitles(){
-  document.getElementById("titlesStrip").innerHTML = TITLES.map(function(x){
-    return '<div class="title-card"><div class="t"><span class="medal">★</span>'+x.t+'</div><div class="w">'+x.w+'</div><div class="d">'+x.d+'</div></div>';
-  }).join("");
-}
 
 function renderCreators(){
   var list = CREATORS.filter(function(c){
-    return inWindow(c.active) && themeOk(c.themes) && queryOk(c.handle+" "+c.note);
-  }).slice().sort(function(a,b){
-    if(a.score===null && b.score!==null) return 1;
-    if(a.score!==null && b.score===null) return -1;
-    return a.rank-b.rank;
+    return queryOk(c.handle+" "+c.note);
   });
   var html = list.map(function(c, idx){
-    c = Object.assign({}, c, {rank: idx+1});
-    var scoreHtml = c.score===null ? '<div class="score">—</div>' : '<div class="score">'+c.score+'</div>';
-    var stats = c.hit===null
-      ? '<span>Picks tracked <b>'+c.picks+'</b></span><span>Not enough data to rate yet</span>'
-      : '<span>Picks <b>'+c.picks+'</b></span><span>Hit rate <b>'+c.hit+'%</b></span><span>vs VOO <b class="'+(c.vs.indexOf("−")===0||c.vs.indexOf("-")===0?"neg":"pos")+'">'+c.vs+' pts</b></span>';
-    var picks = c.picksList.map(function(p){
-      return '<div class="pick"><span class="tk">'+p.tk+'</span><span class="meta">'+p.meta+'</span><span class="res '+p.cls+'">'+p.res+'</span></div>';
-    }).join("");
+    var rank = idx+1;
+    var stats = c.kind==="picks"
+      ? '<span>Picks extracted <b>'+c.picks+'</b></span><span>Settled trades <b>0</b></span><span>No settled record yet</span>'
+      : '<span>Picks extracted <b>0</b></span><span>Rule / framework content</span><span>Settled trades <b>0</b></span>';
+    var picksHtml = "";
+    if(c.knownPicks.length){
+      picksHtml = '<h3>Extracted picks on record</h3><div class="pick-list">' + c.knownPicks.map(function(p){
+        return '<div class="pick"><span class="tk">'+p.tk+'</span><span class="meta">'+p.meta+'</span></div>';
+      }).join("") + '</div>';
+    } else if(c.kind==="picks"){
+      picksHtml = '<h3>Extracted picks on record</h3><div class="strengths">'+c.picks+' picks extracted by the pipeline. Individual tickers are held in the pipeline data; none has a settled paper-book result yet.</div>';
+    }
     return '<div class="row"><button class="row-head c-grid" aria-expanded="false">'
-      +'<span class="rank'+(c.rank<=3?" top":"")+'">'+c.rank+'</span>'
-      +'<span><span class="handle">'+c.handle+' '+tierBadge(c.tier)+'</span><span class="substats" style="display:flex">'+stats+'</span></span>'
-      +'<span class="score-block">'+scoreHtml+'<div class="score-label">Score</div></span>'
-      +'<span class="trend-cell">'+trendHtml(c.trend)+'</span>'
+      +'<span class="rank">'+rank+'</span>'
+      +'<span><span class="handle">'+c.handle+' <span class="badge b-unrated">○ Unrated</span></span><span class="substats" style="display:flex">'+stats+'</span></span>'
+      +'<span class="score-block"><div class="score">—</div><div class="score-label">Score</div></span>'
       +'<span class="chev">⌄</span></button>'
-      +'<div class="detail"><div class="detail-cols"><div><h3>Strengths / weakness</h3><div class="strengths">'+c.note+'</div>'
-      +'<h3>Last 3 tracked picks</h3><div class="pick-list">'+picks+'</div></div>'
-      +'<div><h3>Shareable rank card</h3><div class="rank-card"><div class="rc-top">Talk Is Cheap · Creator Rank</div>'
-      +'<div class="rc-handle">'+c.handle+'</div><div class="rc-score">'+(c.score===null?"—":c.score)+'</div>'
-      +'<div class="rc-row"><span>Rank <b>#'+c.rank+'</b></span><span>Hit rate <b>'+(c.hit===null?"—":c.hit+"%")+'</b></span><span>vs VOO <b>'+(c.vs===null?"—":c.vs+" pts")+'</b></span></div>'
-      +'<div class="rc-foot">Every pick tracked · Nothing deletable · Sample card</div></div>'
-      +'<p class="share-note">Sample card — in the live engine this image is regenerated at each publish, sized for posting back to Instagram.</p></div></div></div></div>';
+      +'<div class="detail"><div class="detail-cols"><div><h3>Record so far</h3><div class="strengths">'+c.note+'</div>'
+      + picksHtml + '</div>'
+      +'<div><h3>Status card</h3><div class="rank-card"><div class="rc-top">Talk Is Cheap · Creator Status</div>'
+      +'<div class="rc-handle">'+c.handle+'</div><div class="rc-score">—</div><div class="rc-tier">Unrated</div>'
+      +'<div class="rc-row"><span>Picks extracted <b>'+c.picks+'</b></span><span>Settled trades <b>0</b></span></div>'
+      +'<div class="rc-foot">Scores come from settled paper-book trades only</div></div>'
+      +'<p class="share-note">A score appears here only after this creator’s picks settle in the paper book — 3 settled trades minimum before any tier is assigned.</p></div></div></div></div>';
   }).join("");
   document.getElementById("creatorBoard").innerHTML = html;
   document.getElementById("creatorEmpty").style.display = html ? "none" : "block";
@@ -417,20 +375,21 @@ function renderCreators(){
 
 function renderStocks(){
   var html = STOCKS.filter(function(s){
-    return inWindow(s.active) && themeOk(s.themes) && queryOk(s.tk+" "+s.co+" "+s.why);
+    return queryOk(s.tk+" "+s.co+" "+s.why);
   }).map(function(s){
     var sugg = s.sugg.map(function(g){
-      return '<div class="sugg-row"><span class="who">'+g.who+'</span>'+tierBadge(g.tier)+'<span class="their-why">“'+g.why+'”</span></div>';
+      return '<div class="sugg-row"><span class="who">'+g.who+'</span><span class="badge b-unrated">○ '+g.tier+'</span><span class="their-why">“'+g.why+'”</span><span class="their-why">· '+g.date+'</span></div>';
     }).join("");
     return '<div class="row"><button class="row-head s-grid" aria-expanded="false">'
-      +'<span class="rank'+(s.rank<=3?" top":"")+'">'+s.rank+'</span>'
+      +'<span class="rank">'+s.rank+'</span>'
       +'<span><span class="ticker">'+s.tk+' <span class="company">'+s.co+'</span></span>'
       +'<span class="why" style="display:block">'+s.why+'</span>'
-      +'<span class="weight" style="display:block">Story weight: <b>'+s.weight+'</b> · Freshest story '+s.fresh+'</span></span>'
-      +'<span class="scores-pair"><span class="mini-score"><div class="n">'+s.cat+'<span style="color:var(--muted);font-size:14px">/30</span></div><div class="l">Catalyst</div></span>'
-      +'<span class="mini-score"><div class="n">'+s.street+'<span style="color:var(--muted);font-size:14px">/10</span></div><div class="l">Street</div></span></span>'
+      +'<span class="weight" style="display:block">Story weight: <b>'+s.weight+'</b> · Expires '+s.expires+'</span></span>'
+      +'<span class="scores-pair"><span class="mini-score"><div class="n">—<span style="color:var(--muted);font-size:14px">/30</span></div><div class="l">Catalyst</div></span>'
+      +'<span class="mini-score"><div class="n">—<span style="color:var(--muted);font-size:14px">/10</span></div><div class="l">Street</div></span></span>'
       +'<span class="chev">⌄</span></button>'
       +'<div class="detail"><h3>Who suggested it — and their why</h3><div class="sugg">'+sugg+'</div>'
+      +'<h3 style="margin-top:16px">Key risk</h3><div class="strengths">'+s.risk+'</div>'
       +'<h3 style="margin-top:16px">Checkpoint tracking</h3><div class="strengths">'+s.track+'</div></div></div>';
   }).join("");
   document.getElementById("stockBoard").innerHTML = html;
@@ -439,7 +398,7 @@ function renderStocks(){
 }
 
 function renderToday(){
-  var items = TODAY.filter(function(t){ return inWindow(t.days) && themeOk(t.themes) && queryOk(t.title+" "+t.desc); });
+  var items = TODAY.filter(function(t){ return queryOk(t.title+" "+t.desc); });
   document.getElementById("todayFeed").innerHTML = items.map(function(t){
     return '<div class="feed-item"><div class="feed-icon">'+t.icon+'</div><div><div class="ft">'+t.title+'</div><div class="fd">'+t.desc+'</div></div><div class="ftime">'+t.time+'</div></div>';
   }).join("");
@@ -449,13 +408,13 @@ function renderToday(){
 
 function renderPosts(){
   var html = POSTS.filter(function(p){
-    return inWindow(p.days) && themeOk(p.themes) && queryOk(p.who+" "+p.claim);
+    return queryOk(p.who+" "+p.subject+" "+p.note);
   }).map(function(p){
+    var badge = p.badge ? ' <span class="badge b-false">'+p.badge+'</span>' : ' <span class="badge b-checked">Fact-checked</span>';
     return '<div class="row"><button class="row-head p-grid" aria-expanded="false">'
-      +'<span><span class="post-who">'+p.who+'</span> <span class="badge b-'+p.verdict+'">'+p.vlabel+'</span>'
-      +'<span class="claim" style="display:block">'+p.claim+'</span>'
-      +'<span class="indicators"><span class="ind">Specificity <b>'+p.spec+'</b></span><span class="ind">Rule clarity <b>'+p.clarity+'</b></span><span class="ind">'+p.days+'d ago</span></span></span>'
-      +'<span class="post-score"><div class="n">'+p.score+'</div><div class="l">Post score</div></span>'
+      +'<span><span class="post-who">'+p.who+'</span>'+badge
+      +'<span class="claim" style="display:block">'+p.subject+'</span></span>'
+      +'<span class="post-score"><div class="n">'+p.score+'</div><div class="l">Fact-check /100</div></span>'
       +'<span class="chev">⌄</span></button>'
       +'<div class="detail"><h3>Fact-check note</h3><div class="strengths">'+p.note+'</div></div></div>';
   }).join("");
@@ -475,7 +434,7 @@ function bindRows(id){
   }
 }
 
-function renderAll(){ renderTitles(); renderCreators(); renderStocks(); renderToday(); renderPosts(); }
+function renderAll(){ renderCreators(); renderStocks(); renderToday(); renderPosts(); }
 
 /* Tabs */
 var tabs = document.querySelectorAll(".tab");
@@ -491,17 +450,7 @@ for(var i=0;i<tabs.length;i++){
   });
 }
 
-/* Filters */
-var segBtns = document.querySelectorAll("#windowSeg button");
-for(var k=0;k<segBtns.length;k++){
-  segBtns[k].addEventListener("click", function(){
-    for(var j=0;j<segBtns.length;j++) segBtns[j].classList.remove("active");
-    this.classList.add("active");
-    state.window = this.getAttribute("data-window");
-    renderAll();
-  });
-}
-document.getElementById("themeSel").addEventListener("change", function(){ state.theme = this.value; renderAll(); });
+/* Search */
 document.getElementById("searchBox").addEventListener("input", function(){ state.query = this.value.trim().toLowerCase(); renderAll(); });
 
 renderAll();
