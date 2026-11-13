@@ -163,7 +163,7 @@ footer strong{color:var(--ink)}
 </style>
 </head>
 <body>
-<div class="status-banner"><b>Pipeline run · Nov 12, 2026</b> &nbsp;·&nbsp; Paper book has settled 0 trades — every creator is Unrated until trades settle</div>
+<div class="status-banner"><b>Pipeline run · Nov 13, 2026</b> &nbsp;·&nbsp; Paper book has settled 2 trades — every creator is still Unrated (3 settled trades needed for a tier)</div>
 
 <div class="wrap">
 <header>
@@ -171,12 +171,12 @@ footer strong{color:var(--ink)}
   <h1>Talk Is Cheap</h1>
   <p class="subtitle">Stock tips are free. Track records aren’t.</p>
   <div class="stat-chips">
-    <span class="chip"><b>1,621</b> reels collected</span>
-    <span class="chip"><b>621</b> new today</span>
-    <span class="chip"><b>24</b> posts scraped &amp; fact-checked</span>
-    <span class="chip"><b>1,597</b> still queued</span>
-    <span class="chip"><b>29</b> picks extracted</span>
-    <span class="chip"><b>22</b> creators tracked</span>
+    <span class="chip"><b>2,182</b> reels collected</span>
+    <span class="chip"><b>561</b> new today</span>
+    <span class="chip"><b>25</b> posts scraped &amp; fact-checked</span>
+    <span class="chip"><b>2,157</b> still queued</span>
+    <span class="chip"><b>32</b> picks extracted</span>
+    <span class="chip"><b>23</b> creators tracked</span>
     <span class="chip"><b>22</b> stocks tracked</span>
   </div>
 </header>
@@ -189,15 +189,15 @@ footer strong{color:var(--ink)}
 </div>
 
 <nav class="tabs" aria-label="Boards">
-  <button class="tab active" data-board="creators">Creators <span class="count">22</span></button>
+  <button class="tab active" data-board="creators">Creators <span class="count">23</span></button>
   <button class="tab" data-board="stocks">Stocks <span class="count">1</span></button>
   <button class="tab" data-board="today">Today <span class="count" id="todayCount">5</span></button>
-  <button class="tab" data-board="posts">Posts <span class="count">7</span></button>
+  <button class="tab" data-board="posts">Posts <span class="count">8</span></button>
 </nav>
 
 <!-- CREATORS -->
 <section id="board-creators">
-  <p class="board-note">Ordered by picks extracted. Creator scores and tiers come only from settled Talk Is Cheap paper-book trades — the book has settled 0 trades so far, so every creator is Unrated with no score and no settled record yet. No promotions or demotions today: nobody has 3 settled trades. Tap a row for details.</p>
+  <p class="board-note">Ordered by picks extracted. Creator scores and tiers come only from settled Talk Is Cheap paper-book trades — the book has settled 2 trades so far (@mikes.ai and @betterwavefinance, 1 each), so every creator is still Unrated with no score yet. No promotions or demotions today: nobody has 3 settled trades. Tap a row for details.</p>
   <div class="board" id="creatorBoard"></div>
   <div class="empty" id="creatorEmpty">No creators match that search.</div>
 </section>
@@ -211,44 +211,47 @@ footer strong{color:var(--ink)}
 
 <!-- TODAY -->
 <section id="board-today" class="hidden-board">
-  <p class="board-note">What the Nov 12, 2026 pipeline run did — collection, extraction, scoring and checkpoints.</p>
+  <p class="board-note">What the Nov 13, 2026 pipeline run did — collection, extraction, scoring and checkpoints.</p>
   <div class="feed" id="todayFeed"></div>
   <div class="empty" id="todayEmpty">Nothing matches that search.</div>
 </section>
 
 <!-- POSTS -->
 <section id="board-posts" class="hidden-board">
-  <p class="board-note">Fact-check scores (out of 100) assigned at ingest for the posts scraped so far — 7 of the 24 scraped posts carry a score in this run. Tap a row for the note.</p>
+  <p class="board-note">Fact-check scores (out of 100) assigned at ingest for the posts scraped so far — 8 of the 25 scraped posts carry a score in this run. Tap a row for the note.</p>
   <div class="board" id="postBoard"></div>
   <div class="empty" id="postEmpty">No posts match that search.</div>
 </section>
 
 <footer>
-  <p><strong>How scoring works.</strong> Creator scores and tiers come only from settled Talk Is Cheap paper-book trades — never from post popularity or checkpoint moves. The book has settled 0 trades, so no creator has a score yet. Post scores are ingest fact-check scores out of 100. The 1d / 5d / 20d beat-vs-VOO checkpoints are a secondary in-flight indicator only and never set tiers; today’s checkpoint run filled 0 because the Stooq price source was unavailable, so no checkpoint figures are shown.</p>
+  <p><strong>How scoring works.</strong> Creator scores and tiers come only from settled Talk Is Cheap paper-book trades — never from post popularity or checkpoint moves. The book has settled 2 trades so far (@mikes.ai 1, @betterwavefinance 1); a tier needs 3 settled trades, so no creator has a score yet. Post scores are ingest fact-check scores out of 100. The 1d / 5d / 20d beat-vs-VOO checkpoints are a secondary in-flight indicator only and never set tiers; today’s checkpoint run filled 0 because the Stooq price source was unavailable (bot-gated), so no checkpoint figures are shown.</p>
   <p><strong>Not financial advice.</strong> A leaderboard of public stock calls is information, not a recommendation to buy or sell anything. Records are earned from tracked picks only — never bought, never editable after the fact.</p>
 </footer>
 </div>
 
 <script>
 var CREATORS = [
- {handle:"@betterwavefinance",picks:6,kind:"picks",
-  note:"6 picks extracted — the most of any creator in the current corpus. No settled paper-book trades yet, so no score or tier.",
-  knownPicks:[]},
+ {handle:"@betterwavefinance",picks:6,kind:"picks",settled:1,settledNote:"1 settled · VRT −8.05%",
+  note:"6 picks extracted — the most of any creator in the current corpus. 1 settled paper-book trade so far (VRT, −8.05%); a tier needs 3 settled trades, so still Unrated with no score.",
+  knownPicks:[{tk:"VRT",meta:"Settled in paper book · −8.05%"}]},
  {handle:"@wall_street_trapper",picks:5,kind:"picks",
   note:"5 picks extracted. His government-stake post (RGTI / QBTS) fact-checked at 85/100 at ingest. No settled trades yet.",
   knownPicks:[{tk:"RGTI",meta:"Government-stake post · Sep 8, 2026"},{tk:"QBTS",meta:"Government-stake post · Sep 8, 2026"}]},
  {handle:"@bdinvestingg",picks:5,kind:"picks",
   note:"5 picks extracted. No settled paper-book trades yet, so no score or tier.",
   knownPicks:[]},
- {handle:"@mikes.ai",picks:3,kind:"picks",
-  note:"3 picks extracted. His “millionaires” post fact-checked at 65/100 at ingest. No settled trades yet.",
-  knownPicks:[]},
+ {handle:"@mikes.ai",picks:3,kind:"picks",settled:1,settledNote:"1 settled · AAOI −9.73%",
+  note:"3 picks extracted. His “millionaires” post fact-checked at 65/100 at ingest. 1 settled paper-book trade so far (AAOI, −9.73%); a tier needs 3 settled trades, so still Unrated with no score.",
+  knownPicks:[{tk:"AAOI",meta:"Settled in paper book · −9.73%"}]},
  {handle:"@berttrading",picks:3,kind:"picks",
   note:"3 picks extracted. No settled paper-book trades yet, so no score or tier.",
   knownPicks:[]},
  {handle:"@joe.investss",picks:3,kind:"picks",
   note:"3 picks extracted. His undervalued-stocks post fact-checked at 80/100 at ingest. No settled trades yet.",
   knownPicks:[]},
+ {handle:"@bdon_trades",picks:3,kind:"picks",
+  note:"New today — first scraped in the Nov 13, 2026 run (post dated Aug 28, 2025, fact-checked at 45/100 at ingest). 3 picks extracted: BBAI, AI (C3.ai) and PATH, pitched as 10x-in-5–10-years AI names. No settled trades yet.",
+  knownPicks:[{tk:"BBAI",meta:"10x AI pitch · post Aug 28, 2025"},{tk:"AI",meta:"C3.ai · 10x AI pitch · post Aug 28, 2025"},{tk:"PATH",meta:"10x AI pitch · post Aug 28, 2025"}]},
  {handle:"@thestreet",picks:1,kind:"picks",
   note:"Suggested MU on Oct 19, 2026 — currently the only unexpired candidate on the Stocks board. Expires Nov 16, 2026.",
   knownPicks:[{tk:"MU",meta:"Suggested Oct 19, 2026 · expires Nov 16, 2026"}]},
@@ -310,10 +313,11 @@ var STOCKS = [
 ];
 
 var TODAY = [
- {icon:"+621",title:"621 new reels collected",desc:"Corpus is now 1,621 reels in total. 24 posts have been scraped and fact-checked so far; 1,597 are still queued.",time:"Today"},
- {icon:"29",title:"29 picks extracted",desc:"Across 22 tracked creators and 22 tracked stocks. Ten creators have at least one extracted pick; the other twelve posted rule / framework content with no ticker picks.",time:"Today"},
+ {icon:"+561",title:"561 new reels collected",desc:"Corpus is now 2,182 reels in total. 25 posts have been scraped and fact-checked so far; 2,157 are still queued.",time:"Today"},
+ {icon:"32",title:"32 picks extracted",desc:"Across 23 tracked creators and 22 tracked stocks. Eleven creators have at least one extracted pick; the other twelve posted rule / framework content with no ticker picks.",time:"Today"},
+ {icon:"NEW",title:"New creator scraped: @bdon_trades",desc:"Post dated Aug 28, 2025, fact-checked at 45/100 at ingest. 3 picks extracted — BBAI, AI (C3.ai) and PATH — pitched as 10x-in-5–10-years AI names.",time:"Today"},
  {icon:"MU",title:"One active candidate: MU (Micron)",desc:"Suggested by @thestreet on Oct 19, 2026 — the only unexpired suggested stock. Expires Nov 16, 2026. MU is also the most-picked stock overall, with 5 picks across all scraped posts.",time:"Today"},
- {icon:"0",title:"0 settled paper-book trades",desc:"Creator scores and tiers come only from settled trades, so every creator remains Unrated. No promotions or demotions today — nobody has 3 settled trades yet.",time:"Today"},
+ {icon:"2",title:"2 settled paper-book trades",desc:"@mikes.ai has 1 settled trade (AAOI, −9.73%) and @betterwavefinance has 1 (VRT, −8.05%); everyone else has 0. Creator scores and tiers come only from settled trades and need 3, so every creator remains Unrated. No promotions or demotions today.",time:"Today"},
  {icon:"—",title:"Checkpoints filled: 0",desc:"The 1d / 5d / 20d beat-vs-VOO checkpoint run filled nothing — the Stooq price source was unavailable (bot-gated). No checkpoint figures are shown rather than invented.",time:"Today"}
 ];
 
@@ -330,6 +334,8 @@ var POSTS = [
   note:"Fact-check score assigned at ingest for this post."},
  {who:"@quantifiedstrategies",subject:"System post",score:55,badge:null,
   note:"Fact-check score assigned at ingest for this trading-system post."},
+ {who:"@bdon_trades",subject:"10x AI picks post — BBAI, AI & PATH",score:45,badge:null,
+  note:"Fact-check score assigned at ingest. Post dated Aug 28, 2025 pitches BBAI, C3.ai (AI) and PATH as 10x-in-5–10-years AI names. First scraped in the Nov 13, 2026 run."},
  {who:"@swing_niveshak",subject:"Kell-system post",score:40,badge:"Header claim false",
   note:"The post’s 983% header claim was false — the real figure is 941.1%. Fact-check score assigned at ingest."}
 ];
@@ -344,9 +350,10 @@ function renderCreators(){
   });
   var html = list.map(function(c, idx){
     var rank = idx+1;
+    var settled = c.settled||0;
     var stats = c.kind==="picks"
-      ? '<span>Picks extracted <b>'+c.picks+'</b></span><span>Settled trades <b>0</b></span><span>No settled record yet</span>'
-      : '<span>Picks extracted <b>0</b></span><span>Rule / framework content</span><span>Settled trades <b>0</b></span>';
+      ? '<span>Picks extracted <b>'+c.picks+'</b></span><span>Settled trades <b>'+settled+'</b></span><span>'+(c.settledNote ? c.settledNote : 'No settled record yet')+'</span>'
+      : '<span>Picks extracted <b>0</b></span><span>Rule / framework content</span><span>Settled trades <b>'+settled+'</b></span>';
     var picksHtml = "";
     if(c.knownPicks.length){
       picksHtml = '<h3>Extracted picks on record</h3><div class="pick-list">' + c.knownPicks.map(function(p){
@@ -364,7 +371,7 @@ function renderCreators(){
       + picksHtml + '</div>'
       +'<div><h3>Status card</h3><div class="rank-card"><div class="rc-top">Talk Is Cheap · Creator Status</div>'
       +'<div class="rc-handle">'+c.handle+'</div><div class="rc-score">—</div><div class="rc-tier">Unrated</div>'
-      +'<div class="rc-row"><span>Picks extracted <b>'+c.picks+'</b></span><span>Settled trades <b>0</b></span></div>'
+      +'<div class="rc-row"><span>Picks extracted <b>'+c.picks+'</b></span><span>Settled trades <b>'+settled+'</b></span>'+(c.settledNote?'<span>'+c.settledNote+'</span>':'')+'</div>'
       +'<div class="rc-foot">Scores come from settled paper-book trades only</div></div>'
       +'<p class="share-note">A score appears here only after this creator’s picks settle in the paper book — 3 settled trades minimum before any tier is assigned.</p></div></div></div></div>';
   }).join("");
